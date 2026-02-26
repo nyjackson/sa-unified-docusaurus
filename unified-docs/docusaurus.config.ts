@@ -1,6 +1,7 @@
 import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
@@ -19,11 +20,6 @@ const config: Config = {
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
-
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
 
   onBrokenLinks: 'throw',
 
@@ -71,7 +67,7 @@ const config: Config = {
       theme: {light: 'neutral', dark: 'forest'},
     },
     navbar: {
-      title: 'S & A Unified Knowledge Hub',
+      title: 'S & A Unified Knowledge',
       logo: {
         alt: 'S & A Unified Logo',
         src: 'img/logo.svg', //add logo file
@@ -81,22 +77,28 @@ const config: Config = {
           type: 'docSidebar',
           sidebarId: 'mainSidebar',
           position: 'left',
-          label: 'Getting Started',
+          label: 'Documents',
         },
        // {to: '/blog', label: 'Blog', position: 'left'},
         // {type: 'localeDropdown',
         //   position: 'right', 
         // },
+        {
+          label: 'Editor Login',
+          href: 'pathname:///admin/',
+          position:'right',
+          className: 'button button--secondary nav-button'
+        }
       ],
     },
     footer: {
       style: 'dark',
       links: [
         {
-          title: 'Docs',
+          title: 'Document Index',
           items: [
             {
-              label: 'Tutorial',
+              label: 'Getting Started',
               to: '/docs/intro',
             },
           ],
@@ -105,13 +107,17 @@ const config: Config = {
           title: 'Resources',
           items: [
             {
-              label: 'Website',
+              label: 'Company Website',
               href: 'https://saunifiedhomecare.com/',
+            },
+            {
+              label: 'Client Eligibility Tool',
+              href: 'http://18.118.252.91/login',
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} S & A Unified. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} S & A Unified Home Care, Inc. Built with Docusaurus.`,
     },
     prism: {
       theme: prismThemes.github,

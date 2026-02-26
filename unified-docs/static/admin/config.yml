@@ -9,13 +9,13 @@ public_folder: "/img/uploads"
 
 collections:
   # --------------------------------------------------------
-  # 1. TEAMS COLLECTION (Must come first if others rely on it)
+  # 1. TEAMS COLLECTION (Must come first since others rely on it for relations)
   # --------------------------------------------------------
   - name: "teams"
     label: "Team Information"
-    folder: "docs/03-teams" # Maps to your Docusaurus folder
+    folder: "docs/03-teams" # Maps to Docusaurus docs folder
     create: true
-    slug: "{{slug}}"
+    slug: "{{slug}}" # auto-generates new docs as title_name.md
     fields:
       - { label: "Team Name (Title)", name: "title", widget: "string" }
       - { label: "Type", name: "type", widget: "hidden", default: "team" }
@@ -108,8 +108,7 @@ collections:
           label: "Priority",
           name: "priority",
           widget: "select",
-          options:
-            ["High", "Medium", "Low", "None"],
+          options: ["High", "Medium", "Low", "None"],
         }
       - {
           label: "Integration",
@@ -188,7 +187,7 @@ collections:
         multiple: true
         required: false
 
-      # Relates to Teams
+      # Relates to Teams/Departments
       - label: "Related Teams"
         name: "related_teams"
         widget: "relation"
