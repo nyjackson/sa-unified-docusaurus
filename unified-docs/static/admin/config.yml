@@ -1,0 +1,206 @@
+backend:
+  name: github
+  repo: your-org/your-repo # Update this with company repo
+  branch: main
+
+media_folder: "static/img/uploads"
+public_folder: "/img/uploads"
+
+collections:
+  # --------------------------------------------------------
+  # 1. TEAMS COLLECTION (Must come first if others rely on it)
+  # --------------------------------------------------------
+  - name: "teams"
+    label: "Team Information"
+    folder: "docs/03-teams" # Maps to your Docusaurus folder
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Team Name (Title)", name: "title", widget: "string" }
+      - { label: "Type", name: "type", widget: "hidden", default: "team" }
+      - { label: "Department Head", name: "department_head", widget: "string" }
+      - {
+          label: "Parent Department",
+          name: "parent_department",
+          widget: "select",
+          options: ["Operations", "HR", "Finance", "IT", "Clinical"],
+        }
+      - { label: "Tags", name: "tags", widget: "list" }
+      - {
+          label: "Last Updated",
+          name: "last_updated",
+          widget: "datetime",
+          date_format: "YYYY-MM-DD",
+          time_format: false,
+        }
+      - { label: "Body (Responsibilities)", name: "body", widget: "markdown" }
+
+  # --------------------------------------------------------
+  # 2. DEFINITIONS COLLECTION (Glossary)
+  # --------------------------------------------------------
+  - name: "definitions"
+    label: "Definitions"
+    folder: "docs/01-definitions"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Term (Title)", name: "title", widget: "string" }
+      - {
+          label: "Stands For",
+          name: "full_name",
+          widget: "string",
+          required: false,
+        }
+      - {
+          label: "Classification",
+          name: "classification",
+          widget: "select",
+          options:
+            [
+              "Agency Term",
+              "State System",
+              "Insurance Plan",
+              "Common Abbreviated Terms",
+            ],
+        }
+
+      # Notice the relation widget pointing to ITSELF to link other definitions
+      - label: "Related Terms"
+        name: "related_terms"
+        widget: "relation"
+        collection: "definitions" # Looks inside this same collection
+        search_fields: ["title"]
+        value_field: "title"
+        multiple: true
+        required: false
+
+      - { label: "Tags", name: "tags", widget: "list" }
+      - { label: "Description", name: "body", widget: "markdown" }
+
+  # --------------------------------------------------------
+  # 3. PROJECTS COLLECTION 
+  # --------------------------------------------------------
+  - name: "projects"
+    label: "Projects"
+    folder: "docs/02-projects"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Project Name (Title)", name: "title", widget: "string" }
+      - { label: "Type", name: "type", widget: "hidden", default: "system" }
+      - { label: "Author", name: "author", widget: "string" }
+      - {
+          label: "Vendor",
+          name: "vendor",
+          widget: "select",
+          options:
+            ["Executel", "Microsoft", "HHAeXchange", "Viventium", "Internal"],
+        }
+      - {
+          label: "Status",
+          name: "status",
+          widget: "select",
+          options:
+            ["Active", "In Development", "Legacy", "Deprecated", "On Hold"],
+        }
+      - {
+          label: "Integration",
+          name: "integration",
+          widget: "select",
+          options:
+            [
+              "Manual (Email/Excel)",
+              "CSV Upload",
+              "API (REST)",
+              "Webhooks",
+              "None",
+            ],
+        }
+      - {
+          label: "Classification",
+          name: "category",
+          widget: "select",
+          options: ["HR", "Billing", "Operations", "Authorization", "Quality"],
+        }
+
+      # The MAGIC widget: This pulls team names directly from the Teams collection!
+      - label: "Related Teams"
+        name: "related_teams"
+        widget: "relation"
+        collection: "teams" # Looks at Collection 1
+        search_fields: ["title"]
+        value_field: "title"
+        multiple: true
+
+      - { label: "Tags", name: "tags", widget: "list" }
+      - {
+          label: "Created On",
+          name: "created_on",
+          widget: "datetime",
+          format: "YYYY-MM-DD",
+        }
+      - {
+          label: "Updated On",
+          name: "last_updated",
+          widget: "datetime",
+          format: "YYYY-MM-DD",
+        }
+      - { label: "Body & Resources", name: "body", widget: "markdown" }
+
+  # --------------------------------------------------------
+  # 4. WORK INFORMATION (PROCESSES) COLLECTION
+  # --------------------------------------------------------
+  - name: "processes"
+    label: "Work Information (Processes)"
+    folder: "docs/04-processes"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Process Name (Title)", name: "title", widget: "string" }
+      - { label: "Type", name: "type", widget: "hidden", default: "process" }
+      - { label: "Author", name: "author", widget: "string" }
+
+      # Relates to other processes
+      - label: "Related Processes"
+        name: "related_processes"
+        widget: "relation"
+        collection: "processes"
+        search_fields: ["title"]
+        value_field: "title"
+        multiple: true
+        required: false
+
+      # Relates to Projects (System tools)
+      - label: "Related Projects"
+        name: "related_projects"
+        widget: "relation"
+        collection: "projects"
+        search_fields: ["title"]
+        value_field: "title"
+        multiple: true
+        required: false
+
+      # Relates to Teams
+      - label: "Related Teams"
+        name: "related_teams"
+        widget: "relation"
+        collection: "teams"
+        search_fields: ["title"]
+        value_field: "title"
+        multiple: true
+        required: false
+
+      - { label: "Tags", name: "tags", widget: "list", required: false }
+      - {
+          label: "Created On",
+          name: "created_on",
+          widget: "datetime",
+          format: "YYYY-MM-DD",
+        }
+      - {
+          label: "Last Updated",
+          name: "last_updated",
+          widget: "datetime",
+          format: "YYYY-MM-DD",
+        }
+      - { label: "Process Details", name: "body", widget: "markdown" }
