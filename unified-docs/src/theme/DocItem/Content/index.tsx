@@ -8,10 +8,11 @@ import type {WrapperProps} from '@docusaurus/types';
 type Props = WrapperProps<typeof ContentType>;
 
 export default function ContentWrapper(props: Props): ReactNode {
- // const {siteConfig, siteMetadata} = useDoc()
-   // testing
-  //const {classification, related_teams, status, vendor, author} = siteMetadata
-  //console.log(classification)
+  const {frontMatter, metadata} = useDoc()
+  console.log("Front Matter Passed ",frontMatter)
+  console.log("Metadata Passed ",metadata)
+
+   
 
   return (
     <>

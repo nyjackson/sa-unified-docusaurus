@@ -39,7 +39,7 @@ const config: Config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/nyjackson/sa-unified-docusaurus/tree/main/unified-docs/',
+            'pathname:///admin/',
         },
         blog: {
           showReadingTime: true,
@@ -57,7 +57,7 @@ const config: Config = {
       ({
         // `hashed` is recommended as long-term-cache of index file is possible.
         hashed: true,
-        // Only search your docs
+        // Only search docs
         indexBlog: false,
         indexPages: false,
         indexDocs: true,
