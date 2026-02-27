@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # Getting Started
 
-Let's discover **Docusaurus in less than 5 minutes**.
+Let's discover **Unified Docs** in a few minutes.
 
 ## Getting Started
 
@@ -12,36 +12,12 @@ Select any of the categories on the left sidebar to navigate the different topic
 
 
 ### Navigation
+To navigate the site, you can use any of the following:
 
-- Search 
-- Tags
-- Sidebar
+- Search: The search bar is located in the top right of the navigation bar. Start typing a term, keyword, or phrase to search through available documentation.
+- Tags: At the end of each document, there are a list of tags that you can select to discover other documents with the same tag(s).
+- Sidebar: The sidebar appears after `Documents` on the top navigation bar is selected. 
 
-### 
+### Adding, Editing, and Deleting Content
 
-Generate a new Docusaurus site using the **classic template**.
-
-The classic template will automatically be added to your project after you run the command:
-
-```bash
-npm init docusaurus@latest my-website classic
-```
-
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
-
-The command also installs all necessary dependencies you need to run Docusaurus.
-
-## Start your site
-
-Run the development server:
-
-```bash
-cd my-website
-npm run start
-```
-
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
-
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
-
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
+If you'd like to add/delete a new document or edit an existing document, you must select `Editor Login` button in the top right of the site (or ). This will take you to the editing site. 

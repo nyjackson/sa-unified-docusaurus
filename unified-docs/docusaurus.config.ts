@@ -39,7 +39,7 @@ const config: Config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'pathname:///admin/',
+            'pathname:///admin/', // edit, not working
         },
         blog: {
           showReadingTime: true,
