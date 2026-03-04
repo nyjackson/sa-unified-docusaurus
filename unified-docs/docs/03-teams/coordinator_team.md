@@ -10,7 +10,7 @@ tags:
   - resolution
 last_updated: 2026-02-26
 ---
-## Summary
+## Description
 The Coordinator Team is the operational heart of the agency, responsible 
 for matching caregivers with patients, 
 ensuring EVV compliance, and managing daily 

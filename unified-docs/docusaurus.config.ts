@@ -6,7 +6,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
   title: 'S & A Unified Knowledge Hub',
-  tagline: 'Engineering & Operations Documentation',
+  tagline: 'Onboarding, Engineering & Operations Documentation',
   favicon: 'img/favicon.ico',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future

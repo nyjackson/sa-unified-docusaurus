@@ -29,7 +29,7 @@ const sidebars: SidebarsConfig = {
     {
       type:'category',
       label: 'Terms',
-      // link: {
+      // link: { // generates card index with abbreviations, showing the first line ("Description")
       //   type: 'generated-index',
       //   title: 'Glossary & Abbreviations',
       //   description: 'A complete A-Z list of all S & A Unified abbreviations, systems, and healthcare terms.',
