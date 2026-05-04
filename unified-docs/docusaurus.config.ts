@@ -22,7 +22,12 @@ const config: Config = {
   // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
-    locales: ['en'], //, 'ru' also
+    locales: ['en', 'ru', 'es'],
+    localeConfigs: {
+      en: {label: 'English'},
+      ru: {label: 'Русский'},
+      es: {label: 'Español'},
+    },
   },
 
   presets: [
@@ -89,6 +94,10 @@ const config: Config = {
           label: 'Documents',
         },
         {
+          type: 'localeDropdown',
+          position: 'right',
+        },
+        {
           label: 'Editor Login',
           href: 'pathname:///admin/',
           position:'right',
@@ -117,8 +126,16 @@ const config: Config = {
             },
             {
               label: 'Client Eligibility Tool',
-              href: 'http://18.118.252.91/login',
+              href: 'https://eligibility.saunified.com/login',
             },
+             {
+              label: 'Document Scanning Portal',
+              href: 'https://scan.saunified.com/',
+            },
+            {
+              label: 'In-Service Caregiver Training Tool',
+              href: 'https://inservicecare.com/login'
+            }
           ],
         },
       ],

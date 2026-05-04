@@ -1,0 +1,18 @@
+{
+  "title": {
+    "message": "S & A Unified Knowledge",
+    "description": "The title in the navbar"
+  },
+  "logo.alt": {
+    "message": "S & A Unified Logo",
+    "description": "The alt text of navbar logo"
+  },
+  "item.label.Documents": {
+    "message": "Documents",
+    "description": "Navbar item with label Documents"
+  },
+  "item.label.Editor Login": {
+    "message": "Editor Login",
+    "description": "Navbar item with label Editor Login"
+  }
+}

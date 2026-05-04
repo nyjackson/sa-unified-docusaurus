@@ -1,0 +1,22 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.mainSidebar.category.Terms": {
+    "message": "Terms",
+    "description": "The label for category 'Terms' in sidebar 'mainSidebar'"
+  },
+  "sidebar.mainSidebar.category.Projects": {
+    "message": "Projects",
+    "description": "The label for category 'Projects' in sidebar 'mainSidebar'"
+  },
+  "sidebar.mainSidebar.category.Teams": {
+    "message": "Teams",
+    "description": "The label for category 'Teams' in sidebar 'mainSidebar'"
+  },
+  "sidebar.mainSidebar.category.Processes": {
+    "message": "Processes",
+    "description": "The label for category 'Processes' in sidebar 'mainSidebar'"
+  }
+}
