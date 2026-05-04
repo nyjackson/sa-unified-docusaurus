@@ -84,7 +84,7 @@ const config: Config = {
       title: 'S & A Unified Knowledge',
       logo: {
         alt: 'S & A Unified Logo',
-        src: 'img/logo.svg', //add logo file
+        src: 'img/SAULogo.png',
       },
       items: [
         {

@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: your-org/your-repo # Update this with company repo
+  repo: SA-Unified # Update this with company repo
   branch: main
 local_backend: true
 
